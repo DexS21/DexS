@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Executor - Roblox's Ultimate Executor with Advanced Features.">
+    <title>DexSExecutor</title>
+    <link rel="icon" href="Logo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #101010;
+            color: #fff;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #212121;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: bold;
+            color: #ff6600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px #ff6600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #ddd;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background-color: #ff6600;
+            border-radius: 10px;
+            transform: scale(1.1);
+        }
+
+        .main {
+            text-align: center;
+            padding: 120px 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tagline {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #ff6600;
+            margin: 20px 0;
+        }
+
+        .executor-container img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .executor-container img:hover {
+            transform: scale(1.05) rotate(4deg);
+            filter: brightness(1.2);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .primary-button {
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff6600, #ff3d00);
+            box-shadow: 0 4px 20px rgba(255, 102, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .primary-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.7);
+            background: linear-gradient(135deg, #ff3d00, #ff6600);
+        }
+
+        .toggle-buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 70px 0;
+        }
+
+        .toggle-button {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            transform: scale(1.1);
+            background-color: #ff6600;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+        }
+
+        .section-content {
+            display: none;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ddd;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            margin-top: 100px;
+            text-align: center;
+            padding: 20px;
+            background: #101010;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #ff3d00;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DexSExecutor</h1>
+        <nav class="nav-menu">
+            <a href="#" class="nav-link">Home</a>
+            <a href="https://www.mediafire.com/file/e9ve89ta9ri2aub/DexSExecutor.rar/file" class="nav-link">Download</a>
+            <a href="https://discord.gg/uQqQ3hSCMc" class="nav-link">Discord</a>
+        </nav>
+    </div>
+
+    <div class="main">
+        <h2 class="tagline">Take Your Roblox Experience to the Next Level</h2>
+        <p style="font-size: 1.2rem; color: #ddd; max-width: 700px; margin: 0 auto;">Unlock full potential with Executor – the most powerful Roblox executor available for scripting and modification.</p>
+
+        <div class="executor-container">
+            <img src="Executor.png" alt="Executor Screenshot">
+        </div>
+
+        <div class="button-container">
+            <a href="https://www.mediafire.com/file/e9ve89ta9ri2aub/DexSExecutor.rar/file"><button class="primary-button">Download Now</button></a>
+            <a href="https://discord.gg/uQqQ3hSCMc"><button class="primary-button">Join Discord</button></a>
+        </div>
+
+        <div class="toggle-buttons-container">
+            <button class="toggle-button" onclick="toggleContent('why-us')">Why Us?</button>
+            <button class="toggle-button" onclick="toggleContent('how-it-works')">How It Works</button>
+        </div>
+
+        <div class="section-content" id="why-us">
+            <p>Executor offers unrivaled security, efficiency, and ease of use. Master scripting and unleash your creativity without limitations.</p>
+        </div>
+
+        <div class="section-content" id="how-it-works">
+            <p>Utilizing cutting-edge technology, Executor executes custom scripts with speed and reliability, ensuring an uninterrupted and smooth experience.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Executor. All rights reserved. | <a href="#">Privacy Policy</a>
+    </footer>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const isVisible = content.style.display === 'block';
+
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            if (!isVisible) {
+                content.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
